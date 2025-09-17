@@ -16,7 +16,7 @@ const allowedOrigins = [
 const app = express();
 const server = createServer(app);
 const io = new Server(server, {
-  cors: { origin: env.FRONTEND_URL , methods: ["GET", "POST"] }
+  cors: { origin: env.FRONTEND_URL , methods: ["GET", "POST"], credentials: true }
 });
 
 // Middleware
