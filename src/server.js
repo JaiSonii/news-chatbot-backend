@@ -16,13 +16,13 @@ const allowedOrigins = [
 const app = express();
 const server = createServer(app);
 const io = new Server(server, {
-  cors: { origin: env.FRONTEND_URL , methods: ["GET", "POST"], credentials: true }
+  cors: { origin: env.FRONTEND_URL , methods: ["GET", "POST", "OPTIONS"], credentials: true }
 });
 
 // Middleware
 app.use(cors({
   origin: env.FRONTEND_URL,
-  methods: ["GET", "POST"],
+  methods: ["GET", "POST", "OPTIONS"],
   credentials: true
 }));
 app.use(express.json());
