@@ -31,7 +31,7 @@ A Node.js/Express backend implementing a Retrieval-Augmented Generation (RAG) pi
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-repo/rag-chatbot-backend.git
+git clone https://github.com/JaiSonii/news-chatbot-backend
 cd rag-chatbot-backend
 ```
 
