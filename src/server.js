@@ -20,11 +20,7 @@ const io = new Server(server, {
 });
 
 // Middleware
-app.use(cors({
-  origin : allowedOrigins,
-  methods : ["GET", "POST"],
-  credentials : true
-}));
+app.use(cors());
 app.use(express.json());
 
 // Rate Limiting
