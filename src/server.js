@@ -9,15 +9,22 @@ const { errorHandler } = require('./utils/errorHandler');
 const logger = require('./utils/logger');
 const env = require('./config/env')
 
+const allowedOrigins = [
+  env.FRONTEND_URL
+]
 
 const app = express();
 const server = createServer(app);
 const io = new Server(server, {
-  cors: { origin: env.FRONTEND_URL || "http://localhost:5173", methods: ["GET", "POST"] }
+  cors: { origin: env.FRONTEND_URL , methods: ["GET", "POST"] }
 });
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin : allowedOrigins,
+  methods : ["GET", "POST"],
+  credentials : true
+}));
 app.use(express.json());
 
 // Rate Limiting
